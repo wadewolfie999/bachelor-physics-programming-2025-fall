@@ -1,0 +1,86 @@
+name: "❓ Exercise Clarification"
+description: Request clarification on weekly programming exercises
+title: "[WEEK-X] Clarification needed: [brief description]"
+labels: ["clarification", "student-support", "week-X"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Context
+        Please specify which exercise needs clarification and the physical/computational concept involved.
+
+  - type: dropdown
+    id: week
+    attributes:
+      label: "Week and Exercise"
+      description: "Select the week and specific exercise"
+      options:
+        - "Week 1: Unix CLI - File navigation and scripting"
+        - "Week 2: Git basics - Version control for physics data"
+        - "Week 3: C fundamentals - Kinematics simulations"
+        - "Week 4: C arrays - Particle position tracking"
+        - "Week 5: C++ OOP - Class-based oscillators"
+        - "Week 6: C++ STL - Monte Carlo integration"
+        - "Week 7: Python NumPy - Vectorized physics calculations"
+        - "Week 8: Python Matplotlib - Trajectory visualization"
+        - "Week 9: Project setup - Git branching strategies"
+        - "Week 10: LaTeX integration - Scientific reporting"
+        - "Other (specify below)"
+      default: 0
+      validations:
+        required: true
+
+  - type: textarea
+    id: exercise-details
+    attributes:
+      label: "Specific Exercise/Question"
+      description: "Describe the exact exercise step or concept needing clarification. Include relevant physics context."
+      placeholder: "Text: 'Week 3 Exercise 2.3: Why does the velocity update loop diverge for dt > 0.1? Is this numerical instability related to Euler method limitations?'"
+      render: markdown
+    validations:
+      required: true
+
+  - type: textarea
+    id: code-snippet
+    attributes:
+      label: "Relevant Code (if applicable)"
+      description: "Paste minimal reproducible code causing confusion. Use triple backticks with language identifier."
+      placeholder: |
+        ```c
+        // Week 3: Attempting position update
+        for(int i = 0; i < N_steps; i++) {
+            x += v * dt;  // Why does this become unstable?
+            v += a * dt;
+        }
+      render: shell
+    validations:
+      required: false
+
+  - type: textarea
+    id: expected-vs-actual
+    attributes:
+      label: "Expected vs. Actual Behavior"
+      description: "Describe what you expected (based on physics/assignment) vs. what occurred."
+      placeholder: "Expected: Parabolic trajectory matching analytical solution. Actual: Spiral divergence after 100 steps."
+  - type: dropdown
+    id: environment
+    attributes:
+      label: "Development Environment"
+      description: "Confirm setup matches course requirements"
+      multiple: false
+      options:
+        - "Conda environment (environment.yml activated)"
+        - "VS Code with extensions"
+        - "JupyterLab"
+        - "Terminal only (specify compiler)"
+        - "Other (describe below)"
+      default: 0
+    validations:
+      required: true		
+  - type: textarea
+    id: attempted-solutions
+    attributes:
+      label: "Steps Already Tried"
+      description: "Document debugging attempts — this helps identify learning gaps."
+      placeholder: "1. Checked dt value (set to 0.01). 2. Verified initial conditions match lecture example. 3. Compared with neighbor's output."
+
