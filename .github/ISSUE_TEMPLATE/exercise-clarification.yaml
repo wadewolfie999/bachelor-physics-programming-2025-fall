@@ -27,8 +27,6 @@ body:
         - "Week 10: LaTeX integration - Scientific reporting"
         - "Other (specify below)"
       default: 0
-      validations:
-        required: true
 
   - type: textarea
     id: exercise-details
@@ -37,8 +35,6 @@ body:
       description: "Describe the exact exercise step or concept needing clarification. Include relevant physics context."
       placeholder: "Text: 'Week 3 Exercise 2.3: Why does the velocity update loop diverge for dt > 0.1? Is this numerical instability related to Euler method limitations?'"
       render: markdown
-    validations:
-      required: true
 
   - type: textarea
     id: code-snippet
@@ -53,8 +49,6 @@ body:
             v += a * dt;
         }
       render: shell
-    validations:
-      required: false
 
   - type: textarea
     id: expected-vs-actual
@@ -75,8 +69,6 @@ body:
         - "Terminal only (specify compiler)"
         - "Other (describe below)"
       default: 0
-    validations:
-      required: true		
   - type: textarea
     id: attempted-solutions
     attributes:
