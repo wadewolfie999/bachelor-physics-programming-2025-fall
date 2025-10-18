@@ -1,6 +1,7 @@
-name: "🐛 Bug Report"
+---
+name: 🐛 Bug Report
 description: Report errors in exercises
-title: "[WEEK-X] Bug: [brief description]"
+title: '[WEEK-X] Bug: [brief description]'
 labels: ["bug", "student-support", "week-X"]
 body:
   - type: markdown
@@ -11,61 +12,57 @@ body:
   - type: dropdown
     id: week
     attributes:
-      label: "Week"
+      label: Week
       options:
-        - "Week 1: Unix CLI"
-        - "Week 2: Git"
-        - "Week 3: C fundamentals"
-        - "Week 4: C arrays"
-        - "Week 5: C++ OOP"
-        - "Week 6: C++ STL"
-        - "Week 7: Python NumPy"
-        - "Week 8: Python Matplotlib"
-        - "Week 9: Project setup"
-        - "Week 10: LaTeX"
-        - "Other"
-
+        - 'Week 1: Unix CLI'
+        - 'Week 2: Git'
+        - 'Week 3: C fundamentals'
+        - 'Week 4: C arrays'
+        - 'Week 5: C++ OOP'
+        - 'Week 6: C++ STL'
+        - 'Week 7: Python NumPy'
+        - 'Week 8: Python Matplotlib'
+        - 'Week 9: Project setup'
+        - 'Week 10: LaTeX'
+        - Other
   - type: textarea
     id: description
     attributes:
-      label: "Bug Description"
-      placeholder: "What went wrong? Include error messages."
-
+      label: Bug Description
+      placeholder: What went wrong? Include error messages.
   - type: textarea
     id: steps
     attributes:
-      label: "Steps to Reproduce"
+      label: Steps to Reproduce
       placeholder: |
         1. conda env create -f environment.yml
         2. cd week-3
         3. gcc kinematics.c
         4. ./a.out
       render: shell
-
   - type: textarea
     id: error
     attributes:
-      label: "Error Output"
+      label: Error Output
       placeholder: |
+        gcc: error: unrecognized command line option ‘-std=c11’
     render: shell
-
   - type: dropdown
     id: environment
     attributes:
-      label: "Environment"
+      label: Environment
       options:
-      - macOS Conda
-      - "Linux Conda"
-      - "Windows WSL"
-      - "Other"
-
+        - macOS Conda
+        - Linux Conda
+        - Windows WSL
+        - Other
   - type: textarea
     id: expected
     attributes:
-      label: "Expected Behavior"
-      placeholder: "What did you expect to happen?"
+      label: Expected Behavior
+      placeholder: What did you expect to happen?
   - type: textarea
     id: additional
     attributes:
-      label: "Additional Context"
-      placeholder: "Add any other context about the problem here."
+      label: Additional Context
+      placeholder: Add any other context about the problem here.
