@@ -46,7 +46,7 @@ body:
       label: Error Output
       placeholder: |
         gcc: error: unrecognized command line option ‘-std=c11’
-    render: shell
+      render: shell
   - type: dropdown
     id: environment
     attributes:
